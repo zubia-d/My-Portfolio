@@ -1,4 +1,3 @@
-
 import emailjs from "emailjs-com";
 
 export const Contact = () => {
@@ -7,19 +6,20 @@ export const Contact = () => {
     const formInputData = Object.fromEntries(formData.entries());
     console.log(formInputData);
 
-     emailjs.send(
-      "service_3gegr2f",     // from EmailJS
-      "template_pdw2kzu",    // from EmailJS
-      formInputData,
-      "n2FS66V4EhGGGauKp"      // from EmailJS
-    )
-    .then(() => {
-      alert("Message sent successfully!");
-    })
-    .catch((err) => {
-      console.error(err);
-      alert("Failed to send message.");
-    });
+    emailjs
+      .send(
+        "service_3gegr2f",     // from EmailJS
+        "template_pdw2kzu",    // from EmailJS
+        formInputData,
+        "n2FS66V4EhGGGauKp"    // from EmailJS
+      )
+      .then(() => {
+        alert("Message sent successfully!");
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Failed to send message.");
+      });
   };
 
   return (
@@ -28,10 +28,16 @@ export const Contact = () => {
         Any Query? Let's Connect!
       </h2>
       <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
-        <form action={handleFormSubmit} className="space-y-6">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleFormSubmit(new FormData(e.target));
+          }}
+          className="space-y-6"
+        >
           <input
             type="text"
-            name="username"
+            name="user_name" // ✅ fixed name
             placeholder="Enter your name"
             required
             autoComplete="off"
@@ -40,7 +46,7 @@ export const Contact = () => {
 
           <input
             type="email"
-            name="email"
+            name="user_email" // ✅ fixed name
             placeholder="Enter your email"
             required
             autoComplete="off"
@@ -48,7 +54,7 @@ export const Contact = () => {
           />
 
           <textarea
-            name="message"
+            name="message" // ✅ stays the same
             rows="6"
             placeholder="Enter your message"
             required
@@ -59,7 +65,7 @@ export const Contact = () => {
           <button
             type="submit"
             value="send"
-            className="w-full bg-[#465697] hover:opacity-85-duration-300 hover:scale-105 text-white font-semibold py-3 rounded-lg transition-all duration-300"
+            className="w-full bg-[#465697] hover:opacity-85 duration-300 hover:scale-105 text-white font-semibold py-3 rounded-lg transition-all"
           >
             Submit
           </button>
@@ -68,4 +74,5 @@ export const Contact = () => {
     </div>
   );
 };
+
 export default Contact;
