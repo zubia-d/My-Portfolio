@@ -11,14 +11,14 @@ const Footer = () => {
       id="Footer"
       className="flex justify-around bg-blue-300 text-black p-10 md:p-12 items-center"
     >
-      <div>
-        <h1 className="text-xl md:text-5xl font-bold">Zubia Ghulamullah</h1>
+      <div className="w-50% md:text-xl"> 
+        <h1 className="text-2xl md:text-4xl font-bold">Contact! </h1>
         <h3 className="text-sm md:text-2xl font-normal">
           Feel Free To reach out!
         </h3>
       </div>
 
-      <ul className="text-sm md:text-xl">
+      <ul className="text-sm md:text-xl mx-5">
         <li className="flex gap-1 items-center">
           <MdOutlineEmail size={20} />
           ghulamullahzubia3k@gmail.com

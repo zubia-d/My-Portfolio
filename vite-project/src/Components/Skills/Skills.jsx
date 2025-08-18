@@ -1,4 +1,4 @@
-import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact, FaGitAlt, FaGithub } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact, FaGitAlt, FaGithub , FaWordpress } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandCpp } from "react-icons/tb";
@@ -14,7 +14,9 @@ const skills = [
   { icon: <TbBrandCpp color="#00599C" size={50} />, name: "C++", description: "Programming with object-oriented concepts and efficient algorithms." },
   { icon: <DiMysql color="#00758F" size={50} />, name: "MySQL", description: "Designing and managing relational databases for web applications." },
   { icon: <FaGitAlt color="#f1502f" size={50} />, name: "Git", description: "Version control for tracking changes and collaborating on projects." },
-  { icon: <FaGithub color="#181717" size={50} />, name: "GitHub", description: "Hosting and managing Git repositories in the cloud." }
+  { icon: <FaGithub color="#181717" size={50} />, name: "GitHub", description: "Hosting and managing Git repositories in the cloud." },
+  { icon: <FaWordpress color="#181717" size={50} />, name: "Wordpress", description: "create and manage websites without deep coding knowledge."  }
+
 ];
 
 const Skills = () => {
